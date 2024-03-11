@@ -34,13 +34,13 @@ async function main() {
         console.log("2. Filter by ID");
         console.log("3. Exit");
         console.log(" ");
-        let answer = readline.questionInt('Please enter your choice: ');
-        if (answer === 1) {
+        let answer = readline.question('Please enter your choice: ');
+        if (answer === '1') {
             for (let i = 0; i < champion.length; i++) {
                 console.log(champion[i]);
             }
         }
-        else if (answer === 2) {
+        else if (answer === '2') {
             for (let i = 0; i < champion.length; i++) {
                 let championid = champion[i].id;
                 console.log(championid);
@@ -53,7 +53,7 @@ async function main() {
                 }
             }
         }
-        else if (answer === 3) {
+        else if (answer === '3') {
             break;
         }
         else{
