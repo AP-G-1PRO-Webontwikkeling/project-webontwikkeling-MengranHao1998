@@ -51,9 +51,6 @@ async function main() {
                     let filterid = champion.filter(champion => champion.id === answer2);
                     console.log(filterid)
                 }
-                else{
-                    console.log("please try again");
-                }
             }
         }
         else if (answer === 3) {
