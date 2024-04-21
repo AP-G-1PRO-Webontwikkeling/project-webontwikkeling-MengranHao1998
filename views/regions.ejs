@@ -1,0 +1,18 @@
+<%- include("partials/header")%>
+    <h2>Regions</h2>
+    <form action="/" method="get">
+        <label for="search">Zoeken op naam</label>
+        <input type="text" id="search" placeholder="zoeken">
+    </form>
+    <br>
+    <section>                   
+        <% for (let i = 0; i< Champ.length; i++){%>
+            <div>
+                <a href="/regions.ejs/<%= Champ[i].region.id %>">
+                    <p><%= Champ[i].region.name %></p>
+                    <img class="image" src="<%= Champ[i].region.regionEmblemUrl %>" alt="">
+                </a>
+            </div>
+        <%}%>
+    </section>
+<%- include("partials/footer")%>

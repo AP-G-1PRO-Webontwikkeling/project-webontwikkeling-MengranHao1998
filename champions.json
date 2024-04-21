@@ -12,7 +12,7 @@
         "race":"Darkin",
         "abilities":["DEATHBRINGER STANCE","THE DARKIN BLADE","INFERNAL CHAINS","UMBRAL DASH","WORLD ENDER"],
         "region":{
-            "id":"Magic Earth",
+            "id":"1",
             "name":"Runeterra",
             "Government":"Various",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/9/94/Runeterra_Crest_icon.png/revision/latest?cb=20161117185203"
@@ -31,7 +31,7 @@
         "race":"Vastaya",
         "abilities":["ESSENCE THEFT","ORB OF DECEPTION","FOX-FIRE","CHARM","SPIRIT RUSH"],
         "region":{
-            "id":"The First Lands",
+            "id":"2",
             "name":"Ionia",
             "Government":"Regional provinces",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/f/fc/Ionia_Crest_icon.png/revision/latest?cb=20190720010429"
@@ -50,7 +50,7 @@
         "race":"Human",
         "abilities":["CONTEMPT FOR THE WEAK","RAZOR SHURIKEN","LIVING SHADOW","SHADOW SLASH","DEATH MARK"],
         "region":{
-            "id":"The First Lands",
+            "id":"3",
             "name":"Ionia",
             "Government":"Regional provinces",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/f/fc/Ionia_Crest_icon.png/revision/latest?cb=20190720010429"
@@ -69,7 +69,7 @@
         "race":"Human",
         "abilities":["WAY OF THE WANDERER","STEEL TEMPEST","WIND WALL","SWEEPING BLADE","LAST BREATH"],
         "region":{
-            "id":"The First Lands",
+            "id":"3",
             "name":"Ionia",
             "Government":"Regional provinces",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/f/fc/Ionia_Crest_icon.png/revision/latest?cb=20190720010429"
@@ -88,7 +88,7 @@
         "race":"Human",
         "abilities":["HEMORRHAGE","DECIMATE","CRIPPLING STRIKE","APPREHEND","NOXIAN GUILLOTINE"],
         "region":{
-            "id":"Empire of Noxus",
+            "id":"4",
             "name":"Noxus",
             "Government":"Expansionist Empire",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/3/38/Noxus_Crest_icon.png/revision/latest?cb=20161117055828"
@@ -107,7 +107,7 @@
         "race":"Yordle",
         "abilities":["DOOM 'N GLOOM","MISTRAL BOLT","PERSONAL SPACE","LOOMING DARKNESS","SHADOW SURGE"],
         "region":{
-            "id":"The Blighted Lands",
+            "id":"5",
             "name":"Shadow Isles",
             "Government":"Meritocracy",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/7/72/Shadow_Isles_Crest_icon.png/revision/latest?cb=20190720005424"
@@ -126,7 +126,7 @@
         "race":"Human",
         "abilities":["FROST SHOT","RANGER'S FOCUS","VOLLEY","HAWKSHOT","ENCHANTED CRYSTAL ARROW"],
         "region":{
-            "id":"Vorrijaard",
+            "id":"6",
             "name":"Freljord",
             "Government":"Tribal matriarchy",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/4/4e/Freljord_Crest_icon.png/revision/latest?cb=20190720005359"
@@ -145,7 +145,7 @@
         "race":"Human",
         "abilities":["DIRTY FIGHTING","AVENGERANG","GOING ROGUE","HEROIC SWING","COMEUPPANCE"],
         "region":{
-            "id":"Empire of Shurima",
+            "id":"7",
             "name":"Shurima",
             "Government":"Divine Empire",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/5/5f/Shurima_Crest_icon.png/revision/latest?cb=20161117023336"
@@ -164,7 +164,7 @@
         "race":"Void creature",
         "abilities":["DEATH IN LAVENDER","VOID SURGE","ABOVE AND BELOW","ROYAL MAELSTROM","ENDLESS BANQUET"],
         "region":{
-            "id":"The Void",
+            "id":"8",
             "name":"Void",
             "Government":"The Empress of the Void",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/d/db/Void_Crest_icon.png/revision/latest?cb=20180628142653"
@@ -183,7 +183,7 @@
         "race":"Robot",
         "abilities":["MANA BARRIER","ROCKET GRAB","OVERDRIVE","POWER FIST","STATIC FIELD"],
         "region":{
-            "id":"The Sunken City",
+            "id":"9",
             "name":"Zaun",
             "Government":"Industrial Oligarchy",
             "regionEmblemUrl":"https://static.wikia.nocookie.net/leagueoflegends/images/9/93/Zaun_Crest_icon.png/revision/latest?cb=20161117062823"
