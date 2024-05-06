@@ -1,0 +1,192 @@
+[
+    {
+        "id":"266",
+        "title":"The Darkin Blade",
+        "name":"Aatrox",
+        "story":"Once honored defenders of Shurima against the Void, Aatrox and his brethren would eventually become an even greater threat to Runeterra, and were defeated only by cunning mortal sorcery. But after centuries of imprisonment, Aatrox was the first to find freedom once more, corrupting and transforming those foolish enough to try and wield the magical weapon that contained his essence. Now, with stolen flesh, he walks Runeterra in a brutal approximation of his previous form, seeking an apocalyptic and long overdue vengeance.",
+        "releasedate":"2013-06-13",
+        "exist":10,
+        "isActive": true,
+        "imageUrl": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg",
+        "role":"Fighter",
+        "race":"Darkin",
+        "abilities":["DEATHBRINGER STANCE","THE DARKIN BLADE","INFERNAL CHAINS","UMBRAL DASH","WORLD ENDER"],
+        "region":{
+            "id":"1",
+            "name":"Runeterra",
+            "Government":"Various",
+            "regionEmblemUrl":"https://cdn-images-1.medium.com/v2/resize:fit:1200/1*E3h3kJeAEPvF1_c9i_NRsA.png"
+        }
+    },
+    {
+        "id":"103",
+        "title":"The Nine-Tailed Fox",
+        "name":"Ahri",
+        "story":"Innately connected to the magic of the spirit realm, Ahri is a fox-like vastaya who can manipulate her prey's emotions and consume their essence—receiving flashes of their memory and insight from each soul she consumes. Once a powerful yet wayward predator, Ahri is now traveling the world in search of remnants of her ancestors while also trying to replace her stolen memories with ones of her own making.",
+        "releasedate":"2011-12-14",
+        "exist":12,
+        "isActive": true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg",
+        "role":"Mage",
+        "race":"Vastaya",
+        "abilities":["ESSENCE THEFT","ORB OF DECEPTION","FOX-FIRE","CHARM","SPIRIT RUSH"],
+        "region":{
+            "id":"3",
+            "name":"Ionia",
+            "Government":"Regional provinces",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/iona_crest_icon.png"
+        }
+    },
+    {
+        "id":"238",
+        "title":"The Master of Shadows",
+        "name":"Zed",
+        "story":"Utterly ruthless and without mercy, Zed is the leader of the Order of Shadow, an organization he created with the intent of militarizing Ionia’s magical and martial traditions to drive out Noxian invaders. During the war, desperation led him to unlock the secret shadow form—a malevolent spirit magic as dangerous and corrupting as it is powerful. Zed has mastered all of these forbidden techniques to destroy anything he sees as a threat to his nation, or his new order.",
+        "releasedate":"2012-11-13",
+        "exist":12,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg",
+        "role":"Assassin",
+        "race":"Human",
+        "abilities":["CONTEMPT FOR THE WEAK","RAZOR SHURIKEN","LIVING SHADOW","SHADOW SLASH","DEATH MARK"],
+        "region":{
+            "id":"3",
+            "name":"Ionia",
+            "Government":"Regional provinces",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/iona_crest_icon.png"
+        }
+    },
+    {
+        "id":"157",
+        "title":"The Unforgiven",
+        "name":"Yasuo",
+        "story":"An Ionian of deep resolve, Yasuo is an agile swordsman who wields the air itself against his enemies. As a proud young man, he was falsely accused of murdering his master—unable to prove his innocence, he was forced to slay his own brother in self-defense. In time, his master’s true killer was revealed, and his brother mysteriously returned from death, yet Yasuo still could not forgive himself for all he had done. Now, he wanders the world with only the wind to guide his blade.",
+        "releasedate":"2013-12-13",
+        "exist":11,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg",
+        "role":"Fighter",
+        "race":"Human",
+        "abilities":["WAY OF THE WANDERER","STEEL TEMPEST","WIND WALL","SWEEPING BLADE","LAST BREATH"],
+        "region":{
+            "id":"3",
+            "name":"Ionia",
+            "Government":"Regional provinces",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/iona_crest_icon.png"
+        }
+    },
+    {
+        "id":"122",
+        "title":"The Hand of Noxus",
+        "name":"Darius",
+        "story":"There is no greater symbol of Noxian might than Darius, the nation’s most feared and battle-hardened leader. Rising from humble origins to become the Hand of Noxus, he cleaves through the empire’s enemies—many of them Noxians themselves. Knowing that he never doubts his cause is just, and never hesitates once his axe is raised, those who stand against the commander of the Trifarian Legion can expect no mercy.",
+        "releasedate":"2012-05-23",
+        "exist":12,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg",
+        "role":"Fighter",
+        "race":"Human",
+        "abilities":["HEMORRHAGE","DECIMATE","CRIPPLING STRIKE","APPREHEND","NOXIAN GUILLOTINE"],
+        "region":{
+            "id":"4",
+            "name":"Noxus",
+            "Government":"Expansionist Empire",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/noxus_crest_icon.png"
+        }
+    },
+    {
+        "id":"284",
+        "title":"The Gloomist",
+        "name":"Vex",
+        "story":"In the black heart of the Shadow Isles, a lone yordle trudges through the spectral fog, content in its murky misery. With an endless supply of teen angst and a powerful shadow in tow, Vex lives in her own self-made slice of gloom, far from the revolting cheer of the “normie” world. Though she lacks ambition, she is quick to strike down color and happiness, stopping all would-be interlopers with her magical malaise.",
+        "releasedate":"2021-09-23",
+        "exist":3,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vex_0.jpg",
+        "role":"Mage",
+        "race":"Yordle",
+        "abilities":["DOOM 'N GLOOM","MISTRAL BOLT","PERSONAL SPACE","LOOMING DARKNESS","SHADOW SURGE"],
+        "region":{
+            "id":"5",
+            "name":"Shadow Isles",
+            "Government":"Meritocracy",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/shadow_isles_crest_icon.png"
+        }
+    },
+    {
+        "id":"221",
+        "title":"The Frost Archer",
+        "name":"Ashe",
+        "story":"Iceborn warmother of the Avarosan tribe, Ashe commands the most populous horde in the north. Stoic, intelligent, and idealistic, yet uncomfortable with her role as leader, she taps into the ancestral magics of her lineage to wield a bow of True Ice. With her people’s belief that she is the mythological hero Avarosa reincarnated, Ashe hopes to unify the Freljord once more by retaking their ancient, tribal lands.",
+        "releasedate":"2009-02-01",
+        "exist":15,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg",
+        "role":"Marksman",
+        "race":"Human",
+        "abilities":["FROST SHOT","RANGER'S FOCUS","VOLLEY","HAWKSHOT","ENCHANTED CRYSTAL ARROW"],
+        "region":{
+            "id":"6",
+            "name":"Freljord",
+            "Government":"Tribal matriarchy",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/freljord_crest_icon.png"
+        }
+    },
+    {
+        "id":"295",
+        "title":"The Rogue Sentinel",
+        "name":"Akshan",
+        "story":"Raising an eyebrow in the face of danger, Akshan fights evil with dashing charisma, righteous vengeance, and a conspicuous lack of shirts. He is highly skilled in the art of stealth combat, able to evade the eyes of his enemies and reappear when they least expect him. With a keen sense of justice and a legendary death-reversing weapon, he rights the wrongs of Runeterra’s many scoundrels while living by his own moral code: “Don’t be an ass.”",
+        "releasedate":"2021-07-22",
+        "exist":"3",
+        "isActive":true,
+        "imageUrl":"https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/blt58b3304a9d38b091/60f5d6e21929bc58854d00a6/072221_AkshanChampionTheme_Banner.jpg",
+        "role":"Marksman",
+        "race":"Human",
+        "abilities":["DIRTY FIGHTING","AVENGERANG","GOING ROGUE","HEROIC SWING","COMEUPPANCE"],
+        "region":{
+            "id":"7",
+            "name":"Shurima",
+            "Government":"Divine Empire",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/shurima_crest_icon.png"
+        }
+    },
+    {
+        "id":"246",
+        "title":"The Empress Of The Void",
+        "name":"Bel’Veth",
+        "story":"Anightmarish empress created from the raw material of an entire devoured city, Bel’Veth is the end of Runeterra itself... and the beginning of a monstrous reality of her own design. Driven by epochs of repurposed history, knowledge, and memories from the world above, she voraciously feeds an ever-expanding need for new experiences and emotions, consuming all that crosses her path. Yet her wants could never be sated by only one world as she turns her hungry eyes toward the Void’s old masters...",
+        "releasedate":"2022-06-09",
+        "exist":2,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg",
+        "role":"Fighter",
+        "race":"Void creature",
+        "abilities":["DEATH IN LAVENDER","VOID SURGE","ABOVE AND BELOW","ROYAL MAELSTROM","ENDLESS BANQUET"],
+        "region":{
+            "id":"8",
+            "name":"Void",
+            "Government":"The Empress of the Void",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/void_crest_icon.png"
+        }
+    },
+    {
+        "id":"132",
+        "title":"The Great Steam Golem",
+        "name":"Blitzcrank",
+        "story":"Abehemoth of burnished metal, steam, and crackling electricity, Blitzcrank walks the streets of Zaun in a tireless effort to improve the undercity and give aid to those in need. Created to descend into the most caustic and dangerous of environments in Zaun to dispose of harmful waste, they have evolved beyond the bounds of their original programming, thanks to the genius of their inventor, and the mysterious power of hextech.",
+        "releasedate":"2009-09-02",
+        "exist":15,
+        "isActive":true,
+        "imageUrl":"https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg",
+        "role":"Tank",
+        "race":"Robot",
+        "abilities":["MANA BARRIER","ROCKET GRAB","OVERDRIVE","POWER FIST","STATIC FIELD"],
+        "region":{
+            "id":"9",
+            "name":"Zaun",
+            "Government":"Industrial Oligarchy",
+            "regionEmblemUrl":"https://universe.leagueoflegends.com/images/zaun_crest_icon.png"
+        }
+    }
+]

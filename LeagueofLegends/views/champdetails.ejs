@@ -1,0 +1,15 @@
+<%- include("partials/header")%>
+<h2>Champions</h2>
+    <section>
+        <article>
+            <img src="<%= champs.imageUrl %>" alt="Image of <%= champs.Names %>" style="width:200px;">
+            <p><strong>ID:</strong> <%= champs.id %></p>
+            <p><strong>Title:</strong> <%= champs.title %></p>
+            <p><strong>Naam:</strong> <%= champs.name %></p>
+            <p><strong>Story:</strong> <%= champs.story %></p>
+            <p><strong>Releasedate:</strong> <%= champs.releasedate %></p>
+            <p><strong>Abilities:</strong> <%= champs.abilities.join(', ') %></p>
+            <p><strong>Region:</strong> <%= champs.region.name %></p>
+        </article>
+    </section>
+<%- include("partials/footer")%>

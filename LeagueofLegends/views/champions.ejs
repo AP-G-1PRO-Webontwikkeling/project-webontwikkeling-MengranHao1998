@@ -1,0 +1,18 @@
+<%- include("partials/header")%>
+<h2>Champions</h2>
+<br>
+<section>
+    <% for (let i = 0; i< Champ.length; i++){%>
+        <div>
+            <a href="/Champions/<%= Champ[i].id%>">
+                <img class= "image" src="<%= Champ[i].imageUrl %>" alt="<%= Champ[i].name %>">
+            </a>
+            <p><%= Champ[i].name %></p>
+            <p><%= Champ[i].id %></p>
+            <p><%= Champ[i].releasedate %></p>
+            <p><%= Champ[i].role %></p>
+            <p><%= Champ[i].race %></p>
+        </div>
+    <%}%>
+</section>
+<%- include("partials/footer")%>

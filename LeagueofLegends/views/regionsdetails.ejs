@@ -1,0 +1,11 @@
+<%- include("partials/header")%>
+<h2>Regions Details</h2>
+<section>
+    <article>
+        <img src="<%= region.region.regionEmblemUrl %>" alt="Image of <%= region.Names %>" style="width:200px;">
+        <p><strong>ID:</strong> <%= region.region.id %></p>
+        <p><strong>Naam:</strong> <%= region.region.name %></p>
+        <p><strong>Government:</strong> <%= region.region.Government %></p>
+    </article>
+</section>
+<%- include("partials/footer")%>

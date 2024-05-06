@@ -1,0 +1,17 @@
+<%- include("partials/header")%>
+    <h2>Regions</h2>
+    <br>
+    <section>                   
+        <% for (let i = 0; i< Champ.length; i++){%>
+            <div>
+                <a href="/Regions/<%= Champ[i].region.id%>">
+                    <img class="image" src="<%= Champ[i].region.regionEmblemUrl %>" alt="">
+                </a>
+                <p><%= Champ[i].region.id %></p>
+                <p><%= Champ[i].region.name %></p>
+                <p><%= Champ[i].region.Government %></p>
+                
+            </div>
+        <%}%>
+    </section>
+<%- include("partials/footer")%>

@@ -1,0 +1,31 @@
+<%- include("partials/header")%>
+    <h1>Welkom naam het League of legends info bar</h1>
+    <form action="/" method="get">
+        <label for="search">Zoeken op naam</label>
+        <input type="text" id="search" name="q" value="<%= q %>" placeholder="zoeken">
+        <button type="submit">Zoeken op naam</button>
+        <% for (let field of sortFields) { %>
+                <a href="?sortField=<%= field.value %>&sortDirection=<%= field.value === sortField ? sortDirection === 'asc' ? 'desc' : 'asc' : 'asc' %>">
+                    <%= field.text %>
+                    <% if (field.value === sortField) { %>
+                    <% } %>
+                </a>
+        <% } %>
+    </form>
+    <br>
+    <section>
+        <% for (let i = 0; i< Champ.length; i++){%>
+            <div>
+                <a href="/Champions/<%= Champ[i].id%>">
+                    <img class= "image" src="<%= Champ[i].imageUrl %>" alt="<%= Champ[i].name %>">
+                </a>
+                <p><%= Champ[i].name %></p>
+                <p><%= Champ[i].id %></p>
+                <p><%= Champ[i].releasedate %></p>
+                <p><%= Champ[i].role %></p>
+                <p><%= Champ[i].race %></p>
+
+            </div>
+        <%}%>
+    </section>
+<%- include("partials/footer")%>
