@@ -1,5 +1,7 @@
+import {ObjectId} from "mongodb";
+
 export interface Champions{
-    id:string;
+    id?:ObjectId;
     title:string;
     name:string;
     story:string;

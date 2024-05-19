@@ -1,25 +1,32 @@
-import * as readline from 'readline-sync';
 import championdata from "./champions.json";
-import { Champions } from './types';
 import express ,{ Express } from 'express';
 import path from 'path';
-import { json } from 'stream/consumers';
+import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
+import { connectToDb, main } from "./database";
+import { Champions } from "./types";
 
-async function main() {
-    const response = await fetch(`https://raw.githubusercontent.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-MengranHao1998/main/champions.json`);
-    const champion: Champions[] = await response.json();
-}
+dotenv.config();
 
 const Champ = championdata;
 const app = express();
 const port = 3000;
 
+
 app.set("view engine","ejs");
 app.set("views", path.join(__dirname,'views'));
 app.use(express.static("public"));
-app.use(express.json());
 
-app.get("/",(req,res)=>{
+let champion : Champions[] = [];
+
+app.get("/",async (req,res)=>{
+
+    const db = await connectToDb();
+
+    await main(db);
+
+    const championsCollection = db.collection<Champions>('champion');
+    champion = await championsCollection.find().toArray();
 
     const q = typeof req.query.q === 'string' ? req.query.q.toLowerCase() : "";
     let filteredCharacters = championdata.filter(character => {

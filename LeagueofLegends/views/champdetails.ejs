@@ -1,5 +1,5 @@
 <%- include("partials/header")%>
-<h2>Champions</h2>
+<h2>Champions Details</h2>
     <section>
         <article>
             <img src="<%= champs.imageUrl %>" alt="Image of <%= champs.Names %>" style="width:200px;">
@@ -9,7 +9,7 @@
             <p><strong>Story:</strong> <%= champs.story %></p>
             <p><strong>Releasedate:</strong> <%= champs.releasedate %></p>
             <p><strong>Abilities:</strong> <%= champs.abilities.join(', ') %></p>
-            <p><strong>Region:</strong> <%= champs.region.name %></p>
+            <p><strong>Region:</strong> <a href="/Regions/<%= champs.region.id%>"><%= champs.region.name %></a></p>
         </article>
     </section>
 <%- include("partials/footer")%>
