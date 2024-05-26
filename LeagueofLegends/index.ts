@@ -13,7 +13,7 @@ app.set("port", process.env.PORT || 3000);
 
 app.use(session);
 app.set("view engine","ejs");
-app.use(express.json());
+app.use(express.json({limit: "1mb"}));
 app.use(express.urlencoded({extended: true }));
 app.set("views", path.join(__dirname,'views'));
 app.use(express.static(path.join(__dirname, "public")));
@@ -147,6 +147,36 @@ app.get("/logout", async(req,res)=>{
     req.session.destroy(() =>{
         res.redirect("/login");
     });
+});
+
+app.get("/register",(req , res) => {
+    res.render("register")
+});
+
+app.post("/register", async(req , res) => {
+    const { username, password } = req.body;
+
+    
+
+    try {
+        // Controleer of gebruikersnaam en wachtwoord zijn verstrekt
+        if (!username || !password) {
+            return res.status(400).send("Gebruikersnaam en wachtwoord zijn verplicht");
+        }
+        let user : User =  {email: String(username),password: password,role: "USER"}
+
+        // Voeg de gebruiker toe aan de database
+        await insertUser( user);
+        console.log('inserted')
+
+        // Stuur een succesvolle reactie
+        
+        res.redirect("/");
+    } catch (error) {
+        // Als er een fout optreedt, stuur een foutreactie
+        console.error("Fout bij registreren:", error);
+        res.status(500).send("Er is een interne serverfout opgetreden bij het registreren van de gebruiker");
+    }
 });
 
 app.listen(app.get("port"),async()=>{
