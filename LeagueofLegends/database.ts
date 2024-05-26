@@ -37,28 +37,6 @@ export async function main(){
     }
 }
 
-async function exit() {
-    try {
-        await client.close();
-        console.log("Disconnencted from MongoDB");
-    } catch (error) {
-        console.error(error);
-    }
-    process.exit(0);
-}
-
-export async function connect() {
-    try {
-        await client.connect();
-        await createInitialUser();
-        await main();
-        console.log("Connected to the data");
-        process.on("SIGINT",exit);
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 async function createInitialUser() {
     if (await userCollection.countDocuments() > 2) {
         return;
@@ -70,7 +48,7 @@ async function createInitialUser() {
         throw new Error("ADMIN_USERNAME and ADMIN_PASSWORD must be set in environment");
     }
     await userCollection.insertOne({
-        username: name,
+        email: name,
         password: await bcrypt.hash(password, saltRounds),
         role: "ADMIN"
     });
@@ -81,7 +59,7 @@ async function createInitialUser() {
         throw new Error("USER_USERNAME and USER_PASSWORD must be set in environment");
     }
     await userCollection.insertOne({
-        username: username,
+        email: username,
         password: await bcrypt.hash(userpassword, saltRounds),
         role: "USER"
     });
@@ -127,14 +105,24 @@ export async function login(username: string, password: string) {
     }
 }
 
-export async function registerUser(username:string, password:string) {
-    const existingUser = await userCollection.findOne({username});
-    if(existingUser){
-        throw new Error("User already exists");
+async function exit() {
+    try {
+        await client.close();
+        console.log("Disconnencted from MongoDB");
+    } catch (error) {
+        console.error(error);
     }
-    const hashedPassword = await bcrypt.hash(password, saltRounds);
-    const newUser: User = {username, password: hashedPassword, role: "USER"};
-    await userCollection.insertOne(newUser);
-    console.log(`User registered successfully: ${username}`);
-    return newUser;
+    process.exit(0);
+}
+
+export async function connect() {
+    try {
+        await client.connect();
+        await createInitialUser();
+        await main();
+        console.log("Connected to the data");
+        process.on("SIGINT",exit);
+    } catch (error) {
+        console.error(error);
+    }
 }
