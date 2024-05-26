@@ -1,45 +1,36 @@
-import championdata from "./champions.json";
-import express ,{ Express } from 'express';
+import express from 'express';
 import path from 'path';
-import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
-import { connectToDb, main } from "./database";
+import { connect,getUsers,getUserById,updateCharacter} from "./database";
 import { Champions } from "./types";
-
 dotenv.config();
 
-const Champ = championdata;
 const app = express();
 const port = 3000;
 
-
 app.set("view engine","ejs");
+app.use(express.json());
+app.use(express.urlencoded({extended: true }));
 app.set("views", path.join(__dirname,'views'));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
-let champion : Champions[] = [];
 
 app.get("/",async (req,res)=>{
 
-    const db = await connectToDb();
+    let champion : Champions[] = await getUsers();
 
-    await main(db);
-
-    const championsCollection = db.collection<Champions>('champion');
-    champion = await championsCollection.find().toArray();
-
-    const q = typeof req.query.q === 'string' ? req.query.q.toLowerCase() : "";
-    let filteredCharacters = championdata.filter(character => {
+    let q = typeof req.query.q === 'string' ? req.query.q.toLowerCase() : "";
+    let filteredCharacters = champion.filter(character => {
         return character.name.toLowerCase().includes(q)
     });
-    const sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
-    const sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
+    let sortField = typeof req.query.sortField === "string" ? req.query.sortField : "name";
+    let sortDirection = typeof req.query.sortDirection === "string" ? req.query.sortDirection : "asc";
     
 let sortedCharacters = [...filteredCharacters].sort((a, b) => {
         if (sortField === "name") {
             return sortDirection === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name);
         }else if (sortField === "id") {
-            return sortDirection === "asc" ? a.id.localeCompare(b.id) : b.id.localeCompare(a.id);
+            return sortDirection === "asc" ? a.id.localeCompare(b.id): b.id.localeCompare(a.id);
         }else if (sortField === "releasedate") {
             return sortDirection === "asc" ? a.releasedate.localeCompare(b.releasedate) : b.releasedate.localeCompare(a.releasedate);
         }else if (sortField === "role") {
@@ -65,7 +56,7 @@ let sortedCharacters = [...filteredCharacters].sort((a, b) => {
     ];
 
     res.render("index", {
-        Champ: sortedCharacters,
+        champion: sortedCharacters,
         sortFields:sortFields,
         sortDirections:sortDirections,
         sortField:sortField,
@@ -74,32 +65,58 @@ let sortedCharacters = [...filteredCharacters].sort((a, b) => {
         });
     });
 
-app.get("/Champions",(req,res)=>{
-    res.render("champions",{Champ})
+app.get("/Champions", async(req,res)=>{
+    let champion : Champions[] = await getUsers();
+
+    res.render("champions",{
+        champion:champion
+    })
 });
 
-app.get("/Champions/:id",(req,res)=>{
-    const champs = Champ.find(c => c.id === req.params.id);
-    if (champs) {
-        res.render("champdetails",{champs});
-    }else{
-        res.send("Champions not founded")
-    }
+app.get("/Champions/:id",async(req,res)=>{
+    let champion : Champions[] = await getUsers();
+
+    const champid = req.params.id;
+    const champs = champion.find(champion => champion.id === champid);
+
+    console.log(champs);
+    res.render("champdetails",{
+        champs: champs
+    })
 });
-app.get("/Regions",(req,res)=>{
-    res.render("regions",{Champ})
+app.get("/Regions", async(req,res)=>{
+    let champion : Champions[] = await getUsers();
+    res.render("regions",{champion})
 });
 
-app.get("/Regions/:id",(req,res)=>{
-    const regionsid = req.params.id;
-    const region = Champ.find(d => d.region.id === regionsid);
-    if (region) {
-        res.render("regionsdetails",{region});
-    }else{
-        res.send("Region not founded")
-    }
+app.get("/Regions/:id", async(req,res)=>{
+    let regions : Champions[] = await getUsers();
+
+    const regionid = req.params.id;
+    const region = regions.find(regions => regions.region.id === regionid);
+
+    console.log(region)
+    res.render("regionsdetails",{
+        region:region
+    })
 })
 
+app.get("/:id/update", async(req, res) => {
+    let id : string = req.params.id;
+    let updateuser: Champions | null = await getUserById(id);
+    res.render("update",{
+        updateuser
+    });
+  });
+
+app.post("/:id/update", async(req, res) => {
+    let id : string = req.params.id;
+    let champ : Champions = req.body;
+    await updateCharacter(id,champ);
+    res.redirect("/");
+  });
+
 app.listen(port,async()=>{
+    await connect();
     console.log(`Server is running at http://localhost:${port}`);
 });

@@ -14,17 +14,16 @@
     </form>
     <br>
     <section>
-        <% for (let i = 0; i< Champ.length; i++){%>
+        <% for (let champ of champion){%>
             <div>
-                <a href="/Champions/<%= Champ[i].id%>">
-                    <img class= "image" src="<%= Champ[i].imageUrl %>" alt="<%= Champ[i].name %>">
+                <a href="/Champions/<%= champ.id%>">
+                    <img class= "image" src="<%= champ.imageUrl %>" alt="<%= champ.name %>">
                 </a>
-                <p><%= Champ[i].name %></p>
-                <p><%= Champ[i].id %></p>
-                <p><%= Champ[i].releasedate %></p>
-                <p><%= Champ[i].role %></p>
-                <p><%= Champ[i].race %></p>
-
+                <p><%= champ.name %></p>
+                <p><%= champ.id %></p>
+                <p><%= champ.releasedate %></p>
+                <p><%= champ.role %></p>
+                <p><%= champ.race %></p>
             </div>
         <%}%>
     </section>

@@ -2,14 +2,14 @@
     <h2>Regions</h2>
     <br>
     <section>                   
-        <% for (let i = 0; i< Champ.length; i++){%>
+        <% for (let champ of champion){%>
             <div>
-                <a href="/Regions/<%= Champ[i].region.id%>">
-                    <img class="image" src="<%= Champ[i].region.regionEmblemUrl %>" alt="">
+                <a href="/Regions/<%= champ.region.id%>">
+                    <img class="image" src="<%= champ.region.regionEmblemUrl %>" alt="">
                 </a>
-                <p><%= Champ[i].region.id %></p>
-                <p><%= Champ[i].region.name %></p>
-                <p><%= Champ[i].region.Government %></p>
+                <p><%= champ.region.id %></p>
+                <p><%= champ.region.name %></p>
+                <p><%= champ.region.Government %></p>
                 
             </div>
         <%}%>

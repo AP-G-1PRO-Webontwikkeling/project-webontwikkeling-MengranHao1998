@@ -1,7 +1,9 @@
+import exp from "constants";
 import {ObjectId} from "mongodb";
 
 export interface Champions{
-    id?:ObjectId;
+    _id?:ObjectId;
+    id:string;
     title:string;
     name:string;
     story:string;
@@ -20,4 +22,11 @@ export interface Regions{
     name:string;
     Government:string;
     regionEmblemUrl:string;
+}
+
+export interface User{
+    _id?: ObjectId;
+    username: string;
+    password?: string;
+    role: "ADMIN" | "USER";
 }

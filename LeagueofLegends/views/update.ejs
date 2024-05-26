@@ -1,0 +1,26 @@
+<%- include("partials/header")%>
+<section>
+    <header>
+        <h1>Update User</h1>
+    </header>
+    <form action="/<%= updateuser.id %>/update" method="POST">
+        <div>
+            <label for="name">id:</label>
+            <input type="text" id="id" name="id" value="<%= updateuser.id %>" required>
+        </div>
+        <div>
+            <label for="releasedate">releasedate:</label>
+            <input type="text" id="releasedate" name="releasedate" value="<%= updateuser.releasedate %>" required>
+        </div>
+        <div>
+            <label for="story">story:</label>
+            <input type="text" id="story" name="story" value="<%= updateuser.story %>" required>
+        </div>
+        <div>
+            <label for="title">title:</label>
+            <input type="text" id="title" name="title" value="<%= updateuser.title %>" required>
+        </div>
+        <button type="submit">Update User</button> <!-- Changed the button text to `Update User` -->
+    </form>
+</section>
+<%- include("partials/footer")%>
