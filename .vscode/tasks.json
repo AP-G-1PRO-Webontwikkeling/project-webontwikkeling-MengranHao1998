@@ -1,0 +1,64 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "init folder structure",
+			"type": "shell",
+			"command":"mkdir \"${input:newProject}\" && cd \"${input:newProject}\" && touch \"index.ts\" && code -r \"index.ts\"",
+			"problemMatcher":[]
+		},
+		{
+			"label": "init node",
+			"type": "shell",
+			"command":"npm init -y && tsc --init && npm i -D @types/node",
+			"problemMatcher":[],
+			"dependsOn":[
+				"init folder structure"
+			],
+			"dependsOrder": "sequence",
+			"options": {
+				"cmd": "${fileDirnams}"
+			}
+		},
+		{
+			"label": "init npm global",
+			"type": "shell",
+			"command": "npm i -g -D nodemon ts-node",
+			"problemMatcher": [],
+			"dependsOn":[
+				"init node"
+			],
+			"dependsOrder": "sequence"
+			,
+			"options": {
+				"cmd": "${fileDirnams}"
+			}
+		},
+		{
+			"label": "init packages",
+			"type": "shell",
+			"command": "IFS=' ' read -r -a pkgs <<< \"${input:npmPackages}\" && pintf -v devd ' @types/%s' \"${input(0)}\"&& npm i ${input:npmPackages} && npm i -D $devd",
+			"problemMatcher": [],
+			"dependsOn":[
+				"init npm global"
+			]
+			,
+			"dependsOrder": "sequence",
+			"options": {
+				"cmd": "${fileDirnams}"
+			}
+		}
+	],
+	"inputs": [
+		{
+			"id": "newProject",
+			"description": "Choose a name for the new project folder:",
+			"type": "promptString"
+		},
+		{
+			"id": "npmPackages",
+			"description": "Type the name of the pacages you want to install, seperated with a space",
+			"type": "promptString"
+		}
+	]
+}

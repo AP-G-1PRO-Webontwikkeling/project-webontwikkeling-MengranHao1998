@@ -23,7 +23,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.2",
     "nodemon": "^3.1.1",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "start": "^5.1.0"
   },
   "name": "project-webontwikkeling-mengranhao1998",
   "description": "Project 2024 Mengran Hao",
