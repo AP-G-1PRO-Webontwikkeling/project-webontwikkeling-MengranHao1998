@@ -26,6 +26,7 @@
     "nodemon": "^3.1.1",
     "readline-sync": "^1.4.10",
     "start": "^5.1.0",
+    "ts-node": "^10.9.2",
     "tsc": "^2.0.4"
   },
   "name": "project-webontwikkeling-mengranhao1998",
@@ -35,7 +36,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node index.ts",
-    "build":"tsc index.ts"
+    "build": "tsc index.ts"
   },
   "keywords": [],
   "author": "",
