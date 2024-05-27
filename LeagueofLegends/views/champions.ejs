@@ -12,7 +12,9 @@
             <p><%= champ.releasedate %></p>
             <p><%= champ.role %></p>
             <p><%= champ.race %></p>
+            <% if(user.role === "ADMIN") {%>
             <a href="/<%= champ.id%>/update"><button type="button">Edit</button></a>
+            <%}%>
         </div>
     <%}%>
 </section>

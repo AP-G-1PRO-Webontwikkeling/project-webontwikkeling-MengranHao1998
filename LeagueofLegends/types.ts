@@ -26,7 +26,7 @@ export interface Regions{
 
 export interface User{
     _id?: ObjectId;
-    email: string;
+    email?: string;
     password?: string;
     role: "ADMIN" | "USER";
 }

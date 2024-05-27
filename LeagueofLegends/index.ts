@@ -5,6 +5,7 @@ import { connect,getUsers,getUserById,updateCharacter, login, insertUser} from "
 import { Champions,User} from "./types";
 import session from "./session";
 import { secureMiddleware } from "./secureMiddleware";
+import { name } from 'ejs';
 dotenv.config();
 
 const app : Express = express();
@@ -74,7 +75,7 @@ let sortedCharacters = [...filteredCharacters].sort((a, b) => {
         }
     });
 
-app.get("/Champions", async(req,res)=>{
+app.get("/Champions", secureMiddleware,async(req,res)=>{
     let champion : Champions[] = await getUsers();
 
     res.render("champions",{
@@ -127,23 +128,28 @@ app.post("/:id/update", async(req, res) => {
 
 app.get("/login",(req,res)=>{
     res.render("login");
-})
+});
+
+
  
 
 app.post("/login", async(req, res) => {
-    const email : string = req.body.email;
+    const email : string = req.body.name;
     const password : string = req.body.password;
     try {
+        console.log("User checked "+email);
         let user : User = await login(email, password);
         delete user.password; 
         req.session.user = user;
+        console.log("User from database "+user);
         res.redirect("/")
     } catch (e : any) {
+        console.log(e);
         res.redirect("/login");
     }
 });
 
-app.get("/logout", async(req,res)=>{
+app.post("/logout", async(req,res)=>{
     req.session.destroy(() =>{
         res.redirect("/login");
     });
@@ -155,8 +161,6 @@ app.get("/register",(req , res) => {
 
 app.post("/register", async(req , res) => {
     const { username, password } = req.body;
-
-    
 
     try {
         // Controleer of gebruikersnaam en wachtwoord zijn verstrekt

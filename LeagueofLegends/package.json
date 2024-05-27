@@ -20,6 +20,7 @@
     "express-session": "^1.18.0",
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.6.2",
+    "nodemon": "^3.1.1",
     "readline-sync": "^1.4.10"
   },
   "name": "project-webontwikkeling-mengranhao1998",

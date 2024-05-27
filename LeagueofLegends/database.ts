@@ -37,32 +37,23 @@ export async function main(){
     }
 }
 
-async function createInitialUser() {
-    if (await userCollection.countDocuments() > 2) {
+async function CreateInitialUsers() {
+    if (await userCollection.countDocuments() > 0) {
         return;
     }
-    
-    let name : string | undefined = process.env.ADMIN_USERNAME;
-    let password : string | undefined = process.env.ADMIN_PASSWORD;
-    if (name === undefined || password === undefined) {
-        throw new Error("ADMIN_USERNAME and ADMIN_PASSWORD must be set in environment");
-    }
-    await userCollection.insertOne({
-        email: name,
-        password: await bcrypt.hash(password, saltRounds),
-        role: "ADMIN"
-    });
+    let adminUsername: string | undefined = process.env.ADMIN_USERNAME;
+    let adminPassword: string | undefined = process.env.ADMIN_PASSWORD;
 
-    let username : string | undefined = process.env.USER_USERNAME;
-    let userpassword : string | undefined = process.env.USER_PASSWORD;
-    if (!username || !userpassword ) {
-        throw new Error("USER_USERNAME and USER_PASSWORD must be set in environment");
+    let userUsername: string | undefined = process.env.USER_USERNAME;
+    let userPassword: string | undefined = process.env.USER_PASSWORD;
+
+    if (adminUsername === undefined || adminPassword === undefined || userUsername === undefined || userPassword === undefined) {
+        throw new Error("ADMIN_USERNAME, ADMIN_PASSWORD, USER_USERNAME & USER_PASSWORD must be set in environment");
     }
-    await userCollection.insertOne({
-        email: username,
-        password: await bcrypt.hash(userpassword, saltRounds),
-        role: "USER"
-    });
+    await userCollection.insertMany([
+        { email: adminUsername, password: await bcrypt.hash(adminPassword, saltRounds), role: "ADMIN" },
+        { email: userUsername, password: await bcrypt.hash(userPassword, saltRounds), role: "USER" }
+    ]);
 }
 
 export async function insertUser(user: OptionalId<User>) {
@@ -89,11 +80,12 @@ export async function insertUser(user: OptionalId<User>) {
     }
 }
 
-export async function login(username: string, password: string) {
-    if (username === "" || password === "") {
+export async function login(email: string, password: string) {
+    if (email === "" || password === "") {
         throw new Error("Username and password required");
     }
-    let user : User | null = await userCollection.findOne<User>({username: username});
+    let user : User | null = await userCollection.findOne<User>({email: email});
+    console.log("Functie "+user);
     if (user) {
         if (await bcrypt.compare(password, user.password!)) {
             return user;
@@ -118,7 +110,7 @@ async function exit() {
 export async function connect() {
     try {
         await client.connect();
-        await createInitialUser();
+        await CreateInitialUsers();
         await main();
         console.log("Connected to the data");
         process.on("SIGINT",exit);
