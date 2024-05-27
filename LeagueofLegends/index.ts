@@ -83,7 +83,7 @@ app.get("/Champions", secureMiddleware,async(req,res)=>{
     })
 });
 
-app.get("/Champions/:id",async(req,res)=>{
+app.get("/Champions/:id",secureMiddleware,async(req,res)=>{
     let champion : Champions[] = await getUsers();
 
     const champid = req.params.id;
@@ -94,12 +94,12 @@ app.get("/Champions/:id",async(req,res)=>{
         champs: champs
     })
 });
-app.get("/Regions", async(req,res)=>{
+app.get("/Regions",secureMiddleware, async(req,res)=>{
     let champion : Champions[] = await getUsers();
     res.render("regions",{champion})
 });
 
-app.get("/Regions/:id", async(req,res)=>{
+app.get("/Regions/:id",secureMiddleware, async(req,res)=>{
     let regions : Champions[] = await getUsers();
 
     const regionid = req.params.id;
@@ -111,7 +111,7 @@ app.get("/Regions/:id", async(req,res)=>{
     })
 })
 
-app.get("/:id/update", async(req, res) => {
+app.get("/:id/update",secureMiddleware, async(req, res) => {
     let id : string = req.params.id;
     let updateuser: Champions | null = await getUserById(id);
     res.render("update",{
@@ -119,7 +119,7 @@ app.get("/:id/update", async(req, res) => {
     });
   });
 
-app.post("/:id/update", async(req, res) => {
+app.post("/:id/update",secureMiddleware, async(req, res) => {
     let id : string = req.params.id;
     let champ : Champions = req.body;
     await updateCharacter(id,champ);
@@ -127,11 +127,14 @@ app.post("/:id/update", async(req, res) => {
   });
 
 app.get("/login",(req,res)=>{
-    res.render("login");
+    if (!req.session.user) {
+        res.render("login", {
+            user: req.session.user,
+        });
+    } else {
+        res.redirect("/");
+    }
 });
-
-
- 
 
 app.post("/login", async(req, res) => {
     const email : string = req.body.name;
@@ -149,7 +152,7 @@ app.post("/login", async(req, res) => {
     }
 });
 
-app.post("/logout", async(req,res)=>{
+app.post("/logout",secureMiddleware, async(req,res)=>{
     req.session.destroy(() =>{
         res.redirect("/login");
     });
