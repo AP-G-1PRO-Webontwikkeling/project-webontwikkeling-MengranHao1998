@@ -12,6 +12,7 @@
     "@types/readline-sync": "^1.4.8"
   },
   "dependencies": {
+    "aa": "^0.1.40",
     "bcrypt": "^5.1.1",
     "connect-mongodb-session": "^5.0.0",
     "cookie-parser": "^1.4.6",
@@ -24,14 +25,17 @@
     "mongodb": "^6.6.2",
     "nodemon": "^3.1.1",
     "readline-sync": "^1.4.10",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "tsc": "^2.0.4"
   },
   "name": "project-webontwikkeling-mengranhao1998",
   "description": "Project 2024 Mengran Hao",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.ts",
+    "build":"tsc"
   },
   "keywords": [],
   "author": "",
