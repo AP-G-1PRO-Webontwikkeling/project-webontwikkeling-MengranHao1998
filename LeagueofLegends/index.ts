@@ -5,7 +5,6 @@ import { connect,getUsers,getUserById,updateCharacter, login, insertUser} from "
 import { Champions,User} from "./types";
 import session from "./session";
 import { secureMiddleware } from "./secureMiddleware";
-import { name } from 'ejs';
 dotenv.config();
 
 const app : Express = express();
