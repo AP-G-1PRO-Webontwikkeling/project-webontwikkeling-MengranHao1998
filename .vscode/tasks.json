@@ -4,15 +4,15 @@
 		{
 			"label": "init folder structure",
 			"type": "shell",
-			"command":"mkdir \"${input:newProject}\" && cd \"${input:newProject}\" && touch \"index.ts\" && code -r \"index.ts\"",
-			"problemMatcher":[]
+			"command": "mkdir \"${input:newProject}\" && cd \"${input:newProject}\" && touch \"index.ts\" && code -r \"index.ts\"",
+			"problemMatcher": []
 		},
 		{
 			"label": "init node",
 			"type": "shell",
-			"command":"npm init -y && tsc --init && npm i -D @types/node",
-			"problemMatcher":[],
-			"dependsOn":[
+			"command": "npm init -y && tsc --init && npm i -D @types/node",
+			"problemMatcher": [],
+			"dependsOn": [
 				"init folder structure"
 			],
 			"dependsOrder": "sequence",
@@ -25,11 +25,10 @@
 			"type": "shell",
 			"command": "npm i -g -D nodemon ts-node",
 			"problemMatcher": [],
-			"dependsOn":[
+			"dependsOn": [
 				"init node"
 			],
-			"dependsOrder": "sequence"
-			,
+			"dependsOrder": "sequence",
 			"options": {
 				"cmd": "${fileDirnams}"
 			}
@@ -39,14 +38,22 @@
 			"type": "shell",
 			"command": "IFS=' ' read -r -a pkgs <<< \"${input:npmPackages}\" && pintf -v devd ' @types/%s' \"${input(0)}\"&& npm i ${input:npmPackages} && npm i -D $devd",
 			"problemMatcher": [],
-			"dependsOn":[
+			"dependsOn": [
 				"init npm global"
-			]
-			,
+			],
 			"dependsOrder": "sequence",
 			"options": {
 				"cmd": "${fileDirnams}"
 			}
+		},
+		{
+			"type": "npm",
+			"script": "install",
+			"path": "LeagueofLegends",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "npm: install - LeagueofLegends",
+			"detail": "install dependencies from package"
 		}
 	],
 	"inputs": [
