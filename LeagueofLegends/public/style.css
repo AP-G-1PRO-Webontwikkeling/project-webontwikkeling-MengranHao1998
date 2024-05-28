@@ -21,80 +21,80 @@ h1 {
 }
 
 h2 {
-    color: #ffffff; /* 白色标题 */
-    text-align: center; /* 居中标题 */
+    color: #ffffff;
+    text-align: center;
 }
 
 nav {
-    background-color: #333333; /* 深灰色背景 */
-    color: #ffffff; /* 白色文本 */
-    padding: 10px; /* 设置内边距 */
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px;
     margin-bottom: 20px;
 }
 
 nav a {
-    color: #ffffff; /* 白色链接文本 */
-    text-decoration: none; /* 移除下划线 */
-    margin-right: 20px; /* 右侧间距 */
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 20px;
 }
 
 nav a:hover {
-    text-decoration: underline; /* 链接悬停时添加下划线 */
+    text-decoration: underline;
 }
 
 form {
-    margin-bottom: 20px; /* 设置表单底部间距 */
-    text-align: center; /* 居中表单元素 */
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 label {
-    color: #ffffff; /* 白色标签 */
+    color: #ffffff;
 }
 
 input[type="text"],
 input[type="password"] {
-    width: 100%; /* 输入框宽度100% */
-    padding: 10px; /* 内边距 */
-    border: none; /* 移除边框 */
-    border-radius: 5px; /* 圆角 */
-    background-color: #333333; /* 深灰色输入框 */
-    color: #ffffff; /* 白色文本 */
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333333; 
+    color: #ffffff;
 }
 
 button[type="submit"],
 .btn-secondary {
-    display: block; /* 将按钮显示为块级元素 */
-    width: 100%; /* 按钮宽度100% */
-    padding: 10px; /* 内边距 */
-    border: none; /* 移除边框 */
-    border-radius: 5px; /* 圆角 */
-    cursor: pointer; /* 鼠标悬停指针 */
-    text-align: center; /* 居中文本 */
-    text-decoration: none; /* 移除下划线 */
+    display: block;
+    width: 100%; 
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
 }
 
 button[type="submit"] {
-    background-color: #ff9900; /* 橙色按钮 */
-    color: #ffffff; /* 白色文本 */
+    background-color: #ff9900;
+    color: #ffffff;
 }
 
 button[type="submit"]:hover {
-    background-color: #cc7a00; /* 橙色按钮悬停时的颜色 */
+    background-color: #cc7a00;
 }
 
 .btn-secondary {
-    background-color: #666666; /* 深灰色按钮 */
-    color: #ffffff; /* 白色文本 */
+    background-color: #666666;
+    color: #ffffff;
 }
 
 .btn-secondary:hover {
-    background-color: #333333; /* 深灰色按钮悬停时的颜色 */
+    background-color: #333333;
 }
 
 section {
-    display: flex; /* 使用Flex布局 */
-    flex-wrap: wrap; /* 自动换行 */
-    justify-content: center; /* 主轴居中对齐 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 20px auto;
     max-width: 100%;
 }
@@ -102,12 +102,12 @@ section {
 div {
     max-width: 1000px;
     height: 100%;
-    width:100%; /* 设置div宽度 */
-    margin: 10px; /* 设置div间距 */
-    padding: 10px; /* 设置div内边距 */
-    background-color: #333333; /* 深灰色背景 */
-    border-radius: 5px; /* 圆角 */
-    text-align: center; /* 居中文本 */
+    width:100%;
+    margin: 10px;
+    padding: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .image {
@@ -121,25 +121,25 @@ div {
 }
 
 button[type="button"] {
-    padding: 5px 10px; /* 设置按钮内边距 */
-    border: none; /* 移除边框 */
-    border-radius: 5px; /* 圆角 */
-    background-color: #007bff; /* 蓝色按钮 */
-    color: #ffffff; /* 白色文本 */
-    cursor: pointer; /* 鼠标悬停指针 */
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 button[type="button"]:hover {
-    background-color: #0056b3; /* 蓝色按钮悬停时的颜色 */
+    background-color: #0056b3;
 }
 
 article {
-    width: 400px; /* 设置文章宽度 */
-    margin: 20px; /* 设置文章间距 */
-    padding: 20px; /* 设置文章内边距 */
-    background-color: #333333; /* 深灰色背景 */
-    border-radius: 5px; /* 圆角 */
-    text-align: center; /* 居中文本 */
+    width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #333333;
+    border-radius: 5px;
+    text-align: center;
 }
 
 img {
@@ -158,13 +158,13 @@ p {
 
 a {
     font-size: 20px;
-    margin: 50px; /* 设置文章间距 */
-    color: #007bff; /* 蓝色链接 */
-    text-decoration: none; /* 移除下划线 */
+    margin: 50px;
+    color: #007bff;
+    text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline; /* 链接悬停时添加下划线 */
+    text-decoration: underline;
 }
 main {
     text-align: center;
