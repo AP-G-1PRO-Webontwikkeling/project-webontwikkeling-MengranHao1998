@@ -1,3 +1,6 @@
+<% if(user.role === "ADMIN" || user.role === "USER") {%>
+    <%- include("partials/header")%>
+<%}%>
 <h1>Login</h1>
 <form action="/login" method="post">
     <div class="form-group">
