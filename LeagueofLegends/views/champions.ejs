@@ -7,11 +7,11 @@
             <a href="/Champions/<%= champ.id%>">
                 <img class= "image" src="<%= champ.imageUrl %>" alt="<%= champ.name %>">
             </a>
-            <p><%= champ.name %></p>
-            <p><%= champ.id %></p>
-            <p><%= champ.releasedate %></p>
-            <p><%= champ.role %></p>
-            <p><%= champ.race %></p>
+            <p>Name: <%= champ.name %></p>
+            <p>Id: <%= champ.id %></p>
+            <p>releasedate: <%= champ.releasedate %></p>
+            <p>role: <%= champ.role %></p>
+            <p>race: <%= champ.race %></p>
             <% if(user.role === "ADMIN") {%>
             <a href="/<%= champ.id%>/update"><button type="button">Edit</button></a>
             <%}%>
