@@ -1,47 +1,174 @@
+body {
+    background-color: #1a1a1a;
+    color: #dcdcdc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #e5e5e5;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+h2 {
+    color: #ffffff; /* 白色标题 */
+    text-align: center; /* 居中标题 */
+}
+
+nav {
+    background-color: #333333; /* 深灰色背景 */
+    color: #ffffff; /* 白色文本 */
+    padding: 10px; /* 设置内边距 */
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: #ffffff; /* 白色链接文本 */
+    text-decoration: none; /* 移除下划线 */
+    margin-right: 20px; /* 右侧间距 */
+}
+
+nav a:hover {
+    text-decoration: underline; /* 链接悬停时添加下划线 */
+}
+
+form {
+    margin-bottom: 20px; /* 设置表单底部间距 */
+    text-align: center; /* 居中表单元素 */
+}
+
+label {
+    color: #ffffff; /* 白色标签 */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* 输入框宽度100% */
+    padding: 10px; /* 内边距 */
+    border: none; /* 移除边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #333333; /* 深灰色输入框 */
+    color: #ffffff; /* 白色文本 */
+}
+
+button[type="submit"],
+.btn-secondary {
+    display: block; /* 将按钮显示为块级元素 */
+    width: 100%; /* 按钮宽度100% */
+    padding: 10px; /* 内边距 */
+    border: none; /* 移除边框 */
+    border-radius: 5px; /* 圆角 */
+    cursor: pointer; /* 鼠标悬停指针 */
+    text-align: center; /* 居中文本 */
+    text-decoration: none; /* 移除下划线 */
+}
+
+button[type="submit"] {
+    background-color: #ff9900; /* 橙色按钮 */
+    color: #ffffff; /* 白色文本 */
+}
+
+button[type="submit"]:hover {
+    background-color: #cc7a00; /* 橙色按钮悬停时的颜色 */
+}
+
+.btn-secondary {
+    background-color: #666666; /* 深灰色按钮 */
+    color: #ffffff; /* 白色文本 */
+}
+
+.btn-secondary:hover {
+    background-color: #333333; /* 深灰色按钮悬停时的颜色 */
+}
+
 section {
-    display: grid;
-    grid-template-areas: 
-    "header header header header header header header"
-    "nav nav nav nav nav nav nav"
-    "img A B C"
-    "img D E F";
+    display: flex; /* 使用Flex布局 */
+    flex-wrap: wrap; /* 自动换行 */
+    justify-content: center; /* 主轴居中对齐 */
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+div {
+    max-width: 1000px;
+    height: 100%;
+    width:100%; /* 设置div宽度 */
+    margin: 10px; /* 设置div间距 */
+    padding: 10px; /* 设置div内边距 */
+    background-color: #333333; /* 深灰色背景 */
+    border-radius: 5px; /* 圆角 */
+    text-align: center; /* 居中文本 */
+}
+
+.image {
+    max-height: 600px;
+    max-width: 1000px;
+    display: block; 
+    margin: 0 auto;
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+button[type="button"] {
+    padding: 5px 10px; /* 设置按钮内边距 */
+    border: none; /* 移除边框 */
+    border-radius: 5px; /* 圆角 */
+    background-color: #007bff; /* 蓝色按钮 */
+    color: #ffffff; /* 白色文本 */
+    cursor: pointer; /* 鼠标悬停指针 */
+}
+
+button[type="button"]:hover {
+    background-color: #0056b3; /* 蓝色按钮悬停时的颜色 */
+}
+
+article {
+    width: 400px; /* 设置文章宽度 */
+    margin: 20px; /* 设置文章间距 */
+    padding: 20px; /* 设置文章内边距 */
+    background-color: #333333; /* 深灰色背景 */
+    border-radius: 5px; /* 圆角 */
+    text-align: center; /* 居中文本 */
 }
 
 img {
-    width: 300px;
-    height: 200px;
-
-}
-p {
+    display: block;
     margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    
-    
+    width: 20px;
+    height: auto;
+    border-radius: 5px;
 }
-div {
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+p {
+    margin: 5px 0;
+    line-height: 1.5;
+    font-size: 16px;
 }
-#imgDetail {
-    margin: auto 0;
-    height: 300px;
-    width: 450px;
+
+a {
+    font-size: 20px;
+    margin: 50px; /* 设置文章间距 */
+    color: #007bff; /* 蓝色链接 */
+    text-decoration: none; /* 移除下划线 */
 }
-#mainInfo {
+
+a:hover {
+    text-decoration: underline; /* 链接悬停时添加下划线 */
+}
+main {
     text-align: center;
 }
-#top {
-    display: flex;
-    justify-content: center;
-}
-#nav {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-around;
-}
-.navItem {
-    grid-area: nav;
+.champlist{
+    width: 40%;
 }
