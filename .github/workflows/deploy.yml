@@ -28,7 +28,7 @@ jobs:
     # 4. 构建和推送 Docker 镜像到 Azure ACR
     - name: Build and Push Docker Image
       run: |
-        docker build -t cloudproject2024.azurecr.io/leagueoflegends:latest .
+        docker build -t cloudproject2024.azurecr.io/leagueoflegends:latest ./LeagueOfLegends
         docker push cloudproject2024.azurecr.io/leagueoflegends:latest
 
     # 5. 登录到 Azure VM 并部署 Docker Compose
