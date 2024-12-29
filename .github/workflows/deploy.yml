@@ -40,6 +40,6 @@ jobs:
         key: ${{ secrets.AZURE_VM_PRIVATE_KEY }}
         port: 22
         script: |
-          cd /path/to/docker-compose  # 替换为您实际的路径
+          cd ./docker-compose.yml
           docker-compose down
           docker-compose up -d --build
