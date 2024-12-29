@@ -51,6 +51,6 @@ jobs:
           fi
 
           # 运行 Docker Compose
-          cd /home/azureuser/LeagueofLegends
+          cd /home/azureuser/LeagueofLegends/LeagueofLegends
           docker-compose down
           docker-compose up -d --build
