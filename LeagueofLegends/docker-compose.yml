@@ -21,7 +21,7 @@ services:
 
   web:
     build:
-      context: /home/azureuser/LeagueofLegends/LeagueofLegends
+      context: .
       dockerfile: Dockerfile
     container_name: leagueoflegends-web
     labels:
