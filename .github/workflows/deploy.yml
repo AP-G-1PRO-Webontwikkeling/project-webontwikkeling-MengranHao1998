@@ -43,7 +43,7 @@ jobs:
           # 转到目标目录并克隆/更新项目
           cd /home/azureuser
           if [ ! -d "LeagueofLegends" ]; then
-            git clone https://github.com/YourGitHubUsername/project-webontwikkeling-LeagueofLegends.git LeagueofLegends
+            git clone https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-MengranHao1998.git LeagueofLegends
           else
             cd LeagueOfLegends
             git pull  # 更新已有项目
