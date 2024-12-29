@@ -46,7 +46,8 @@ jobs:
             git clone https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-MengranHao1998.git LeagueofLegends
           else
             cd LeagueofLegends
-            git pull  # 更新已有项目
+            git fetch origin
+            git reset --hard origin/main
           fi
 
           # 运行 Docker Compose
