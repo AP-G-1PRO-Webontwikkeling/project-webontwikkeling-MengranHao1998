@@ -1,5 +1,13 @@
-FROM node:16
+FROM node:14
+
 WORKDIR /app
-RUN git clone https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-Men>RUN npm install
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
 EXPOSE 3000
-CMD ["npm", "start"]
+
+CMD ["npx", "ts-node", "index.ts"]
