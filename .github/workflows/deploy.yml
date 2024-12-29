@@ -43,13 +43,14 @@ jobs:
           # 转到目标目录并克隆/更新项目
           cd /home/azureuser
           if [ ! -d "LeagueOfLegends" ]; then
-            git clone https://github.com/YourGitHubUsername/project-webontwikkeling-LeagueOfLegends.git LeagueOfLegends
+           git clone https://github.com/YourActualGitHubUsername/project-webontwikkeling-LeagueOfLegends.git LeagueOfLegends
           else
-            cd LeagueOfLegends
-            git pull  # 更新已有项目
+           cd LeagueOfLegends
+           git pull  # 更新已有项目
           fi
 
-          # 运行 Docker Compose
+# 运行 Docker Compose
           cd /home/azureuser/LeagueOfLegends
           docker-compose down
           docker-compose up -d --build
+
