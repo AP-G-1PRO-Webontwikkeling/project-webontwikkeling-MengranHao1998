@@ -45,7 +45,7 @@ jobs:
           if [ ! -d "LeagueofLegends" ]; then
             git clone https://github.com/AP-G-1PRO-Webontwikkeling/project-webontwikkeling-MengranHao1998.git LeagueofLegends
           else
-            cd LeagueOfLegends
+            cd LeagueofLegends
             git pull  # 更新已有项目
           fi
 
